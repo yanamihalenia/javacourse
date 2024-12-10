@@ -13,13 +13,11 @@ public class taskArrayOne {
 
         for (int i = 0; i < arrayFirst.length; i++){
 
-            int number = arrayFirst[i];
-
             for (int j = 0; j < arraySecond.length; j++){
 
-                if (number == arraySecond[j]){
+                if (arrayFirst[i] == arraySecond[j]){
 
-                    System.out.println("Repeating number:" + number);
+                    System.out.println("Repeating number:" + arrayFirst[i]);
                     break;
                 }
             }
