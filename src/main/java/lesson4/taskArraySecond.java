@@ -12,27 +12,27 @@ public class taskArraySecond {
 
         int[] array = {4,7,3,76,33,25,1,94};
 
-        int a = array.length;
-        int b = 0;
-        int c = array[0];
-        int d = array[0];
+        int numberOfElements = array.length;
+        int sumOfElements = 0;
+        int minElement = array[0];
+        int maxElement = array[0];
 
         for (int i = 0; i < array.length; i++){
 
-            b += array[i];
+            sumOfElements += array[i];
 
-            if (array[i] < c){
-                c = array[i];
+            if (array[i] < minElement){
+                minElement = array[i];
             }
 
-            if (array[i] > d){
-                d = array[i];
+            if (array[i] > maxElement){
+                maxElement = array[i];
             }
         }
-        System.out.println("Count array elements: " + a);
-        System.out.println("Sum array elements: " + b);
-        System.out.println("Min element: " + c);
-        System.out.println("Max element: " + d);
+        System.out.println("Count array elements: " + numberOfElements);
+        System.out.println("Sum array elements: " + sumOfElements);
+        System.out.println("Min element: " + minElement);
+        System.out.println("Max element: " + maxElement);
 
     }
 }
