@@ -33,8 +33,4 @@ public class Student {
     public void studentLessons (){
         System.out.println("Student " + studentSurname + " visits " + countOfLessons + " lessons.");
     }
-
-    public void studentLessons (int countOfLessons){
-        System.out.println("Student " + studentSurname + " visits " + countOfLessons + " lessons.");
-    }
 }
