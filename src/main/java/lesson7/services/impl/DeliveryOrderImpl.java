@@ -7,4 +7,10 @@ public class DeliveryOrderImpl implements DeliverOrder {
     public void deliverToHome() {
         System.out.println("Your order will be delivered soon");
     }
+
+    @Override
+    public void takeAwayFromCafe() {
+        System.out.println("Your order is ready. Please pick up it in the cafe");
+    }
+
 }
