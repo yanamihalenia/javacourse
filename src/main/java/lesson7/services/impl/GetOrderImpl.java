@@ -22,8 +22,8 @@ public class GetOrderImpl implements GetOrder {
     public void getOrderOnline(Order order) {
         System.out.println("Online order: " + order.getWhatToDeliver());
         saveOrder.saveOrderToDb();
-        cookOrder.orderInProgress();
-        if(order.isDeliveryToHome() == false){
+        cookOrder.showInfoAboutOrder();
+        if(!order.isDeliveryToHome()){
             deliverTo.takeAwayFromCafe();
         }else {
             deliverTo.deliverToHome();
@@ -34,8 +34,8 @@ public class GetOrderImpl implements GetOrder {
     public void getOrderByPhone(Order order) {
         System.out.println("Phone order: " + order.getWhatToDeliver());
         saveOrder.saveOrderToDb();
-        cookOrder.orderInProgress();
-        if(order.isDeliveryToHome() == false){
+        cookOrder.showInfoAboutOrder();
+        if(!order.isDeliveryToHome()){
             deliverTo.takeAwayFromCafe();
         }else {
             deliverTo.deliverToHome();
