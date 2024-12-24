@@ -11,7 +11,7 @@ public class FoodDeliveryApp {
 
     public static void main(String[] args) {
 
-       Order YanaOrder = new Order("Pasta, tea", true);
+        Order YanaOrder = new Order("Pasta, tea", true);
         Order ArtemOrder = new Order("Burger, juice", false);
 
         GetOrderImpl order1 = new GetOrderImpl(
