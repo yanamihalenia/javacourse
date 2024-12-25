@@ -24,7 +24,7 @@ public class GetOrderImpl implements GetOrder {
         saveOrder.saveOrderToDb();
         cookOrder.showInfoAboutOrder();
         if(!order.isDeliveryToHome()){
-            deliverTo.takeAwayFromCafe();
+            deliverTo.deliveryByDefault();
         }else {
             deliverTo.deliverToHome();
         }
@@ -36,7 +36,7 @@ public class GetOrderImpl implements GetOrder {
         saveOrder.saveOrderToDb();
         cookOrder.showInfoAboutOrder();
         if(!order.isDeliveryToHome()){
-            deliverTo.takeAwayFromCafe();
+            deliverTo.deliveryByDefault();
         }else {
             deliverTo.deliverToHome();
         }

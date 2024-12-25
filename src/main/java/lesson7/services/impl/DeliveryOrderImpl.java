@@ -9,7 +9,7 @@ public class DeliveryOrderImpl implements DeliverOrder {
     }
 
     @Override
-    public void takeAwayFromCafe() {
+    public void deliveryByDefault() {
         System.out.println("Your order is ready. Please pick up it in the cafe");
     }
 

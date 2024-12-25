@@ -4,5 +4,5 @@ public interface DeliverOrder {
 
     void deliverToHome();
 
-    void takeAwayFromCafe();
+    void deliveryByDefault();
 }
