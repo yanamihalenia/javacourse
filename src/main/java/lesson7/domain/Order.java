@@ -3,18 +3,18 @@ package lesson7.domain;
 public class Order {
 
     private String whatToDeliver;
-    private boolean deliveryToHome;
+    private boolean delivery;
 
-    public Order(String whatToDeliver, boolean deliveryToHome) {
+    public Order(String whatToDeliver, boolean delivery) {
         this.whatToDeliver = whatToDeliver;
-        this.deliveryToHome = deliveryToHome;
+        this.delivery = delivery;
     }
 
     public String getWhatToDeliver() {
         return whatToDeliver;
     }
 
-    public boolean isDeliveryToHome() {
-        return deliveryToHome;
+    public boolean isDelivery() {
+        return delivery;
     }
 }

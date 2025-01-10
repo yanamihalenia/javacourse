@@ -2,7 +2,7 @@ package lesson7.services;
 
 public interface DeliverOrder {
 
-    void deliverToHome();
-
-    void deliveryByDefault();
+    default void delivery() {
+        System.out.println("Your order is ready. Please pick it up in the cafe");
+    }
 }

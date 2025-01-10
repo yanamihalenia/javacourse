@@ -10,12 +10,12 @@ public class GetOrderImpl implements GetOrder {
 
     private SaveOrderToDb saveOrder;
     private MakeOrder cookOrder;
-    private DeliverOrder deliverTo;
+    private DeliverOrder deliver;
 
-    public GetOrderImpl(SaveOrderToDb saveOrder, MakeOrder cookOrder, DeliverOrder deliverTo) {
+    public GetOrderImpl(SaveOrderToDb saveOrder, MakeOrder cookOrder, DeliverOrder deliverToAnyPlace) {
         this.saveOrder = saveOrder;
         this.cookOrder = cookOrder;
-        this.deliverTo = deliverTo;
+        this.deliver = deliverToAnyPlace;
     }
 
     @Override
@@ -23,10 +23,10 @@ public class GetOrderImpl implements GetOrder {
         System.out.println("Online order: " + order.getWhatToDeliver());
         saveOrder.saveOrderToDb();
         cookOrder.showInfoAboutOrder();
-        if(!order.isDeliveryToHome()){
-            deliverTo.deliveryByDefault();
+        if(!order.isDelivery()){
+            deliver.delivery();
         }else {
-            deliverTo.deliverToHome();
+            System.out.println("Order ready");
         }
     }
 
@@ -35,10 +35,10 @@ public class GetOrderImpl implements GetOrder {
         System.out.println("Phone order: " + order.getWhatToDeliver());
         saveOrder.saveOrderToDb();
         cookOrder.showInfoAboutOrder();
-        if(!order.isDeliveryToHome()){
-            deliverTo.deliveryByDefault();
+        if(order.isDelivery()){
+            deliver.delivery();
         }else {
-            deliverTo.deliverToHome();
+            System.out.println("Order ready");
         }
     }
 }
