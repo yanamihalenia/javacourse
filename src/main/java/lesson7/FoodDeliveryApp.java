@@ -8,27 +8,27 @@ public class FoodDeliveryApp {
 
     public static void main(String[] args) {
 
-        Order yanaOrder = new Order("Pasta, tea", false);
+        Order yanaOrder = new Order("Pasta, tea", true);
         Order artemOrder = new Order("Burger, juice", false);
-        Order annaOrder = new Order("Soup, salad", true);
+        Order annaOrder = new Order("Soup, salad", false);
 
-        GetOrderImpl order1 = new GetOrderImpl(
+        GetOrderOnlineImpl order1 = new GetOrderOnlineImpl(
+                new SaveOrderToDbImpl(),
+                new MakeOrderImpl(),
+                new DeliveryOrderToHomeImpl());
+
+        GetOrderPhoneImpl order2 = new GetOrderPhoneImpl(
                 new SaveOrderToDbImpl(),
                 new MakeOrderImpl(),
                 new DeliveryOrderFromCafeImpl());
 
-        GetOrderImpl order2 = new GetOrderImpl(
+        GetOrderOnlineImpl order3 = new GetOrderOnlineImpl(
                 new SaveOrderToDbImpl(),
                 new MakeOrderImpl(),
                 new DeliveryOrderToHomeImpl());
 
-        GetOrderImpl order3 = new GetOrderImpl(
-                new SaveOrderToDbImpl(),
-                new MakeOrderImpl(),
-                new DeliveryOrderToHomeImpl());
-
-        order1.getOrderOnline(yanaOrder);
-        order2.getOrderByPhone(artemOrder);
-        order3.getOrderByPhone(annaOrder);
+        order1.getOrder(yanaOrder);
+        order2.getOrder(artemOrder);
+        order3.getOrder(annaOrder);
     }
 }

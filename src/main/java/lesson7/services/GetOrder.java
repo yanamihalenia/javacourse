@@ -4,6 +4,5 @@ import lesson7.domain.Order;
 
 public interface GetOrder {
 
-    void getOrderOnline(Order order);
-    void getOrderByPhone(Order order);
+    void getOrder(Order order);
 }
